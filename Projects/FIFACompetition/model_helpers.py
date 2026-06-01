@@ -201,9 +201,8 @@ def gradient_descent(
         b_t (scalar) - bias that minimizes cost
         Js (list) - list of training costs and epoch at different iterations of training
     """
-    w_1, b_1, w_2, b_2 = condensed_to_params(theta=theta)
-    
     Js = []
+    
     for epoch in range(num_iters):
         # Get derivatives
         dtheta = backprop(
@@ -211,6 +210,7 @@ def gradient_descent(
             Y=Y,
             theta=theta
         )
+        w_1, b_1, w_2, b_2 = condensed_to_params(theta=theta)
         dw_1, db_1, dw_2, db_2 = condensed_to_params(theta=dtheta)
         
         # Update weights
@@ -219,8 +219,8 @@ def gradient_descent(
         b_1 = b_1 - (alpha * db_1)
         b_2 = b_2 - (alpha * db_2)
         
-        new_theta = params_to_condensed(w_p=w_1,b_p=b_1,w_t=w_2,b_t=b_2)
-        cost = J(X=X,Y=Y,theta=new_theta)
+        theta = params_to_condensed(w_p=w_1,b_p=b_1,w_t=w_2,b_t=b_2)
+        cost = J(X=X,Y=Y,theta=theta)
         
         # Print result
         print(f"Cost at epoch {epoch}/{num_iters} = {cost}")
@@ -228,6 +228,7 @@ def gradient_descent(
         if epoch % J_n == 0 or epoch == num_iters - 1:
             Js.append((epoch, cost))
         
+    w_1, b_1, w_2, b_2 = condensed_to_params(theta=theta)
     return (w_1, w_2, b_1, b_2, Js)
 
 def interpret_probabilities(prob):
