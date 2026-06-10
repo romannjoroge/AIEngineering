@@ -138,3 +138,39 @@ CV Set Win Accuracy     : 0.45918367346938777
  7-0   TP:0  FP:0  FN:1: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:1
  0-6   TP:0  FP:0  FN:1: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:1
 ```
+
+## *Strategy*: Self-weighting average strategy with 3 layers
+
+First layer is (27, 9), second layer (81, 27) and third is (121, 81)
+
+Results:
+
+```
+Benchmark Score Accuracy: 0.18
+Benchmark Win Accuracy  : 0.7542
+Training Score Accuracy : 0.2119700748129676
+Training Win Accuracy   : 0.541978387364921
+CV Set Score Accuracy   : 0.07142857142857142
+CV Set Win Accuracy     : 0.42857142857142855
+
+-------------------------------------------------
+
+
+    Precision and recall
+ 1-0   TP:0  FP:6  FN:11: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 6  Sample:11
+ 0-4   TP:0  FP:0  FN:10: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:10
+ 0-2   TP:3  FP:20  FN:7: Prec:0.1304  Rec:0.3000  F1:22.0000  #Pred: 23  Sample:10
+ 3-0   TP:2  FP:27  FN:8: Prec:0.0690  Rec:0.2000  F1:39.0000  #Pred: 29  Sample:10
+ 0-1   TP:0  FP:7  FN:10: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 7  Sample:10
+ 0-3   TP:1  FP:13  FN:7: Prec:0.0714  Rec:0.1250  F1:44.0000  #Pred: 14  Sample:8
+ 4-0   TP:0  FP:0  FN:8: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:8
+ 2-0   TP:1  FP:9  FN:7: Prec:0.1000  Rec:0.1250  F1:36.0000  #Pred: 10  Sample:8
+ 0-5   TP:0  FP:1  FN:7: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 1  Sample:7
+ 0-0   TP:0  FP:8  FN:6: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 8  Sample:6
+ 6-0   TP:0  FP:0  FN:3: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:3
+ 5-0   TP:0  FP:0  FN:3: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:3
+10-10  TP:0  FP:0  FN:1: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:1
+ 0-9   TP:0  FP:0  FN:1: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:1
+ 7-0   TP:0  FP:0  FN:1: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:1
+ 0-6   TP:0  FP:0  FN:1: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:1
+```
