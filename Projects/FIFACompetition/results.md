@@ -211,3 +211,38 @@ CV Set Win Accuracy     : 0.5102040816326531
  7-0   TP:0  FP:0  FN:1: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:1
  0-6   TP:0  FP:0  FN:1: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:1
 ```
+
+## *Strategy*: Getting mean of players in teams then concatenation with 2 layers
+
+The first layer is (27, 18) and second is (121, 27). I had thought results would be similar to those of previous experiment but suprisingly it performed much worse on CV set. Not sure why though:
+
+Results:
+
+```
+Benchmark Score Accuracy: 0.18
+Benchmark Win Accuracy  : 0.7542
+Training Score Accuracy : 0.15627597672485452
+Training Win Accuracy   : 0.5103906899418121
+CV Set Score Accuracy   : 0.09183673469387756
+CV Set Win Accuracy     : 0.46938775510204084
+
+----------------------------------------------
+
+    Precision and recall
+ 1-0   TP:1  FP:17  FN:10: Prec:0.0556  Rec:0.0909  F1:58.0000  #Pred: 18  Sample:11
+ 3-0   TP:2  FP:21  FN:8: Prec:0.0870  Rec:0.2000  F1:33.0000  #Pred: 23  Sample:10
+ 0-1   TP:0  FP:9  FN:10: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 9  Sample:10
+ 0-4   TP:0  FP:0  FN:10: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:10
+ 0-2   TP:1  FP:4  FN:9: Prec:0.2000  Rec:0.1000  F1:30.0000  #Pred: 5  Sample:10
+ 0-3   TP:3  FP:20  FN:5: Prec:0.1304  Rec:0.3750  F1:20.6667  #Pred: 23  Sample:8
+ 4-0   TP:0  FP:0  FN:8: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:8
+ 2-0   TP:2  FP:12  FN:6: Prec:0.1429  Rec:0.2500  F1:22.0000  #Pred: 14  Sample:8
+ 0-5   TP:0  FP:1  FN:7: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 1  Sample:7
+ 0-0   TP:0  FP:4  FN:6: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 4  Sample:6
+ 6-0   TP:0  FP:0  FN:3: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:3
+ 5-0   TP:0  FP:1  FN:3: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 1  Sample:3
+ 0-9   TP:0  FP:0  FN:1: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:1
+10-10  TP:0  FP:0  FN:1: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:1
+ 7-0   TP:0  FP:0  FN:1: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:1
+ 0-6   TP:0  FP:0  FN:1: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:1
+```
