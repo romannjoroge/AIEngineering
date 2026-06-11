@@ -174,3 +174,5 @@ CV Set Win Accuracy     : 0.42857142857142855
  7-0   TP:0  FP:0  FN:1: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:1
  0-6   TP:0  FP:0  FN:1: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:1
 ```
+
+Seems that difference does not relate to performance of team. Values with very similar difference vectors ended up having a large array of different scores!
