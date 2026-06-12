@@ -1,0 +1,90 @@
+id,appearances,team,goals,from,to
+WC-2026-001,12,Tigrillos Coapa[4][5],0,2003,None
+WC-2026-001,239,América,0,2004,2011
+WC-2026-001,1,→San Luis(loan),0,2004,None
+WC-2026-001,112,Ajaccio,0,2011,2014
+WC-2026-001,11,Málaga,0,2014,2017
+WC-2026-001,38,→Granada(loan),0,2016,2017
+WC-2026-001,78,Standard Liège,0,2017,2019
+WC-2026-001,118,América,0,2019,2022
+WC-2026-001,41,Salernitana,0,2022,2024
+WC-2026-001,23,AVS,0,2024,2025
+WC-2026-001,22,AEL Limassol,0,2025,None
+WC-2026-002,82,Pumas,11,2014,2018
+WC-2026-002,212,Monterrey,21,2018,2024
+WC-2026-002,42,Toluca,9,2024,None
+WC-2026-003,25,Sonora,0,2017,2018
+WC-2026-003,11,→Monterrey(loan),1,2018,2019
+WC-2026-003,2,Monterrey,0,2019,2020
+WC-2026-003,10,→UNAM(loan),1,2020,None
+WC-2026-003,39,UNAM,1,2020,2022
+WC-2026-003,28,→Genoa(loan),1,2021,2022
+WC-2026-003,109,Genoa,5,2022,None
+WC-2026-003,25,→Cremonese(loan),1,2022,2023
+WC-2026-004,216,Monterrey,9,2015,2022
+WC-2026-004,20,Espanyol,3,2023,None
+WC-2026-004,22,Almería,0,2023,2024
+WC-2026-004,42,Lokomotiv Moscow,4,2024,None
+WC-2026-005,1,Atlas,0,2019,2021
+WC-2026-005,19,→Puebla(loan),0,2020,2021
+WC-2026-005,57,Puebla,6,2021,2022
+WC-2026-005,120,América,3,2023,None
+WC-2026-006,0,Necaxa,0,2019,None
+WC-2026-006,57,Pumas,0,2020,2021
+WC-2026-006,164,Cruz Azul,1,2022,None
+WC-2026-007,89,Real Madrid B,15,2016,2020
+WC-2026-007,31,→Rayo Majadahonda(loan),0,2016,2017
+WC-2026-007,0,Real Madrid,0,2018,None
+WC-2026-007,22,Castellón,0,2020,2021
+WC-2026-007,12,→América(loan),0,2021,None
+WC-2026-007,183,América,20,2021,2026
+WC-2026-007,9,Betis,1,2026,None
+WC-2026-008,152,Chicago Fire,20,2020,2025
+WC-2026-008,12,Guadalajara,2,2025,None
+WC-2026-009,88,Cruz Azul,20,2017,2022
+WC-2026-009,73,Feyenoord,45,2022,2025
+WC-2026-009,30,AC Milan,5,2025,None
+WC-2026-010,96,América,36,2011,2014
+WC-2026-010,21,Atlético Madrid,1,2014,2015
+WC-2026-010,80,Benfica,18,2015,2019
+WC-2026-010,38,→Wolverhampton Wanderers(loan),13,2018,2019
+WC-2026-010,97,Wolverhampton Wanderers,27,2019,2023
+WC-2026-010,98,Fulham,28,2023,2026
+WC-2026-010,0,Wolverhampton Wanderers,0,2026,None
+WC-2026-011,50,Celaya,8,2013,2016
+WC-2026-011,9,Pachuca,1,2017,None
+WC-2026-011,26,Necaxa,2,2017,2018
+WC-2026-011,120,Cruz Azul,16,2018,2021
+WC-2026-011,142,Guadalajara,31,2022,None
+WC-2026-012,278,SuperSport United,0,2010,2022
+WC-2026-012,78,Mamelodi Sundowns,0,2022,None
+WC-2026-013,26,Mpumalanga Black Aces,0,2014,2016
+WC-2026-013,1,Cape Town City,0,2016,None
+WC-2026-013,98,SuperSport United,19,2016,2020
+WC-2026-013,108,Mamelodi Sundowns,6,2020,None
+WC-2026-015,100,Lamontville Golden Arrows,3,2015,2022
+WC-2026-015,73,Orlando Pirates,3,2022,None
+WC-2026-016,37,TS Galaxy F.C.,0,2024,2025
+WC-2026-016,0,Mamelodi Sundowns,0,2026,None
+WC-2026-017,127,SuperSport United,15,2016,2022
+WC-2026-017,81,Mamelodi Sundowns,7,2022,None
+WC-2026-018,71,B-SAD,0,2019,2023
+WC-2026-018,48,Tondela,3,2023,None
+WC-2026-018,2,→Gil Vicente(loan),0,2024,2025
+WC-2026-019,300,Mamelodi Sundowns,68,2011,None
+WC-2026-019,27,→Mpumalanga Black Aces(loan),6,2013,2014
+WC-2026-020,120,Orlando Pirates,29,2023,None
+WC-2026-021,6,SuperSport United,1,2019,2022
+WC-2026-021,15,→University of Pretoria(loan),4,2021,None
+WC-2026-021,32,Pretoria Callies,8,2022,2023
+WC-2026-021,68,Polokwane City FC,13,2023,2025
+WC-2026-021,43,Orlando Pirates,12,2025,None
+WC-2026-022,11,Orlando Pirates,1,2017,2019
+WC-2026-022,8,Monaco II,3,2019,None
+WC-2026-022,2,Monaco,0,2019,2020
+WC-2026-022,18,→Cercle Brugge(loan),1,2019,2020
+WC-2026-022,5,Vitória de Guimarães,0,2020,2022
+WC-2026-022,4,Vitória de Guimarães B,0,2021,None
+WC-2026-022,23,→Westerlo(loan),4,2021,2022
+WC-2026-022,21,Westerlo,8,2022,2023
+WC-2026-022,89,Burnley,11,2023,None
