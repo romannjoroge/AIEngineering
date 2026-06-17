@@ -142,7 +142,6 @@ class ModelV3:
         return (initial_W1, initial_B1, initial_W2, initial_B2, initial_W3, initial_B3)
     
     def backprop(
-        self,
         X: npt.NDArray,
         Y: npt.NDArray,
         lambd: float,
@@ -176,7 +175,7 @@ class ModelV3:
             db3 (ndarray): derivative of third layer's bias
         """
         m = X.shape[1]
-        Y_pred, A1, Z1, A2, Z2 = self.f_x(X=X, W1=W1, b1=b1, W2=W2, b2=b2, W3=W3, b3=b3)
+        Y_pred, A1, Z1, A2, Z2 = ModelV3.f_x(X=X, W1=W1, b1=b1, W2=W2, b2=b2, W3=W3, b3=b3)
         
         dZ3 = Y_pred - Y
         dW3 = (np.matmul(dZ3, A2.T) / m) + ((lambd / m) * W3)
@@ -241,8 +240,8 @@ class ModelV3:
         """
         m = X.shape[1]
         num_batches = math.ceil(m / batch_size)
-        Y_pred, _, _, _, _ = self.f_x(X=X, W1=W1, b1=b1, W2=W2, b2=b2, W3=W3, b3=b3)
-        cost = self.J(Y_pred=Y_pred, Y=Y, lambd=lambd, W1=W1, W2=W2, W3=W3)
+        Y_pred, _, _, _, _ = ModelV3.f_x(X=X, W1=W1, b1=b1, W2=W2, b2=b2, W3=W3, b3=b3)
+        cost = ModelV3.J(Y_pred=Y_pred, Y=Y, lambd=lambd, W1=W1, W2=W2, W3=W3)
         Js = [(0, cost)]
         epsilon = 1e-8
         
@@ -272,7 +271,7 @@ class ModelV3:
                     Yt = Y[:, start:end]
                 
                 # Get derivatives with Xt, Yt
-                dw1, db1, dw2, db2, dw3, db3 = self.backprop(X=Xt, Y=Yt, lambd=lambd, W1=W1, b1=b1, W2=W2, b2=b2, W3=W3, b3=b3)
+                dw1, db1, dw2, db2, dw3, db3 = ModelV3.backprop(X=Xt, Y=Yt, lambd=lambd, W1=W1, b1=b1, W2=W2, b2=b2, W3=W3, b3=b3)
                 
                 # Get sdw, vdw,
                 iteration = (epoch * num_batches) + t + 1
@@ -312,8 +311,8 @@ class ModelV3:
                 b3 = b3 - (alpha* (vdb3_corrected / np.sqrt(sdb3_corrected + epsilon)))
                 
                 # Get cost for Xt, Yt
-                Y_pred_t, _, _, _, _ = self.f_x(X=Xt, W1=W1, b1=b1, W2=W2, b2=b2, W3=W3, b3=b3)
-                cost = self.J(Y=Yt, Y_pred=Y_pred_t, lambd=lambd, W1=W1, W2=W2, W3=W3)
+                Y_pred_t, _, _, _, _ = ModelV3.f_x(X=Xt, W1=W1, b1=b1, W2=W2, b2=b2, W3=W3, b3=b3)
+                cost = ModelV3.J(Y=Yt, Y_pred=Y_pred_t, lambd=lambd, W1=W1, W2=W2, W3=W3)
                 
                 # Store cost and iteration
                 Js.append((iteration, cost))
