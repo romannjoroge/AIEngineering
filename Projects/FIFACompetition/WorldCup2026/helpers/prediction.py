@@ -99,6 +99,39 @@ def get_players_statistics(
     ]
         )
     
+def get_team_statistics_from_squad(
+    statistics: pd.DataFrame,
+    players: pd.DataFrame,
+    squad_members: pd.DataFrame, 
+    squad_id: int,
+    match_date: str
+):
+    """ 
+    This function should return a (11,9) vector with the statistics of the players in squad provided
+    
+    Args:
+        statistics: Dataframe with statistics of each player
+        players: Dataframe with details of players
+        squad_members: Dataframe with ids of players in squad
+        squad_id (scalar): identifier of squad playing
+        match_date (str): Date of the match in YYYY-MM-dd
+        
+    Returns:
+        team_statistics (ndarray): (11,9) vector with statistics of the players from the team
+    """
+    team_members = squad_members[squad_members["squad_id"] == squad_id].head(n=11)
+    player_ids = team_members['player_id']
+    if len(player_ids) != 11:
+        raise Exception("Could not get players for team")
+    
+    player_ids = player_ids.tolist()
+    team = np.empty((0,9))
+    for p_id in player_ids:
+        stats = get_players_statistics(players=players, statistics=statistics, player_id=p_id, match_date=match_date)
+        team = np.append(team, stats, axis=0)
+        
+    return team
+    
 def f_x(
     X: npt.NDArray,
     W1: npt.NDArray,
@@ -138,6 +171,60 @@ def f_x(
     Y_pred = e_z / np.sum(e_z, axis=0, keepdims=True)
     
     return (Y_pred, A1, Z1, A2, Z2)
+
+def get_feature_to_predict(
+    mean_std: npt.NDArray,
+    statistics: pd.DataFrame,
+    players: pd.DataFrame,
+    squad_members: pd.DataFrame,
+    home_squad_id: int,
+    away_squad_id: int,
+    match_date: str
+):
+    """ 
+    Get feature that I can use to make a prediction
+    
+    Args:
+        mean_std: array with mean and std from training set
+        statistics: dataframe with statistics of players
+        players: dataframe with information of players
+        squad_members: dataframe with players in a squad
+        home_squad_id: Identifer of the squad for the home team
+        away_squad_id: Identifer of the squad for the away team
+        match_date: Date match is played in YYYY-MM-dd
+        
+    Returns:
+        x (ndarray): a (18,1) array that has also been normalized
+    """
+    home_team = get_team_statistics_from_squad(
+        statistics=statistics,
+        players=players,
+        squad_members=squad_members,
+        squad_id=home_squad_id, 
+        match_date=match_date
+    )
+    away_team = get_team_statistics_from_squad(
+        statistics=statistics,
+        players=players,
+        squad_members=squad_members,
+        squad_id=away_squad_id, 
+        match_date=match_date
+    )
+    
+    # Get sum of all members in each team
+    sum_home_team = np.sum(home_team, axis=0)
+    sum_away_team = np.sum(away_team, axis=0)
+    
+    # Concatenate
+    sum_concated = (np.concatenate((sum_home_team, sum_away_team), axis=-1)).reshape((18, 1))
+    
+    # Normalize
+    mean = mean_std[0]
+    std = mean_std[0]
+    
+    sum_normalized = (sum_concated - mean) / std
+    
+    return sum_normalized
 
 W1_end_index = 27 * 18
 b1_end_index = W1_end_index + 27
