@@ -1,0 +1,38 @@
+# Experiment Log
+
+Model V3 was making inaccurate predictions because the data of matches that ended in 0-0, 1-1, 2-0, 3-0 etc all looked similar. I've decided to see what changes I can make to the data to make the differences of these outcomes more clear
+
+The performance of Model V3 is:
+
+```
+Benchmark Score Accuracy: 0.18
+Benchmark Win Accuracy  : 0.7542
+Training Score Accuracy : 0.17871986699916875
+Training Win Accuracy   : 0.5103906899418121
+CV Set Score Accuracy   : 0.07142857142857142
+CV Set Win Accuracy     : 0.47959183673469385
+
+-----------------------------------------------
+
+    Precision and recall
+ 1-0   TP:0  FP:3  FN:11: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 3  Sample:11
+ 0-2   TP:4  FP:24  FN:6: Prec:0.1429  Rec:0.4000  F1:19.0000  #Pred: 28  Sample:10
+ 0-4   TP:0  FP:0  FN:10: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:10
+ 3-0   TP:2  FP:15  FN:8: Prec:0.1176  Rec:0.2000  F1:27.0000  #Pred: 17  Sample:10
+ 0-1   TP:1  FP:21  FN:9: Prec:0.0455  Rec:0.1000  F1:64.0000  #Pred: 22  Sample:10
+ 0-3   TP:0  FP:14  FN:8: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 14  Sample:8
+ 4-0   TP:0  FP:0  FN:8: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:8
+ 2-0   TP:0  FP:6  FN:8: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 6  Sample:8
+ 0-5   TP:0  FP:0  FN:7: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:7
+ 0-0   TP:0  FP:8  FN:6: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 8  Sample:6
+ 5-0   TP:0  FP:0  FN:3: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:3
+ 6-0   TP:0  FP:0  FN:3: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:3
+ 0-6   TP:0  FP:0  FN:1: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:1
+10-10  TP:0  FP:0  FN:1: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:1
+ 0-9   TP:0  FP:0  FN:1: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:1
+ 7-0   TP:0  FP:0  FN:1: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:1
+```
+
+## Offense Defense Model Experiment
+
+Replacing goals with offense and defense brought together matches that ended 1-1. It also changes the clustering of different ma
