@@ -69,3 +69,35 @@ CV Set Win Accuracy     : 0.46938775510204084
 Typical signs of high variance where performance in training set is much better than that of CV set. I wonder how a 2 layer architecture would perform with this.
 
 ## Offense Defense 2 layer Model Experiment
+
+The model had a lower training set performance but a much higher CV set performance. The CV set performance and training set performance are both below the benchmark which is indicative of a model with high bias. This then means that the previous model most definetly had high variance. The results are below:
+
+```
+Benchmark Score Accuracy: 0.18
+Benchmark Win Accuracy  : 0.7542
+Training Score Accuracy : 0.12219451371571072
+Training Win Accuracy   : 0.4613466334164589
+CV Set Score Accuracy   : 0.12244897959183673
+CV Set Win Accuracy     : 0.5
+
+--------------------------------
+    Precision and recall
+ 1-0   TP:5  FP:19  FN:6: Prec:0.2083  Rec:0.4545  F1:14.0000  #Pred: 24  Sample:11
+ 3-0   TP:0  FP:10  FN:10: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 10  Sample:10
+ 0-1   TP:0  FP:6  FN:10: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 6  Sample:10
+ 0-2   TP:7  FP:29  FN:3: Prec:0.1944  Rec:0.7000  F1:13.1429  #Pred: 36  Sample:10
+ 0-4   TP:0  FP:0  FN:10: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:10
+ 4-0   TP:0  FP:0  FN:8: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:8
+ 2-0   TP:0  FP:0  FN:8: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:8
+ 0-3   TP:0  FP:22  FN:8: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 22  Sample:8
+ 0-5   TP:0  FP:0  FN:7: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:7
+ 0-0   TP:0  FP:0  FN:6: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:6
+ 5-0   TP:0  FP:0  FN:3: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:3
+ 6-0   TP:0  FP:0  FN:3: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:3
+10-10  TP:0  FP:0  FN:1: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:1
+ 0-6   TP:0  FP:0  FN:1: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:1
+ 0-9   TP:0  FP:0  FN:1: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:1
+ 7-0   TP:0  FP:0  FN:1: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:1
+```
+
+For the LOLs I want to try out the different architecture I thought of where I predict the home team goals seperately from away team goals. Meaning I'd have 22 units in the output layer instead of 121. If it works as well as first architecture I'll use it from now on.
