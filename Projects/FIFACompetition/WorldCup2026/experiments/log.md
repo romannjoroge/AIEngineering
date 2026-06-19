@@ -100,4 +100,4 @@ CV Set Win Accuracy     : 0.5
  7-0   TP:0  FP:0  FN:1: Prec:0.0000  Rec:0.0000  F1:0.0000  #Pred: 0  Sample:1
 ```
 
-For the LOLs I want to try out the different architecture I thought of where I predict the home team goals seperately from away team goals. Meaning I'd have 22 units in the output layer instead of 121. If it works as well as first architecture I'll use it from now on.
+For the LOLs I want to try out the different architecture I thought of where I predict the home team goals seperately from away team goals. Meaning I'd have 22 units in the output layer instead of 121. If it works as well as first architecture I'll use it from now on. I'll call this **Reduced Output**
